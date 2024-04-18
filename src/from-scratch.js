@@ -5,7 +5,7 @@ const hasAVowel = (str) => /[aeiou]/i.test(str);
 
 const hasCatsOrDogs = (str) => /(cats|dogs)/i.test(str);
 
-const hasVowelStart = (str) => { };
+const hasVowelStart = (str) => /^[aeiou]/i.test(str);;
 
 const hasPunctuationEnd = (str) => { };
 
