@@ -7,9 +7,9 @@ const hasCatsOrDogs = (str) => /(cats|dogs)/i.test(str);
 
 const hasVowelStart = (str) => /^[aeiou]/i.test(str);;
 
-const hasPunctuationEnd = (str) => { };
+const hasPunctuationEnd = (str) => /[.?!]$/.test(str);
 
-const hasNothingOrDigits = (str) => { };
+const hasNothingOrDigits = (str) => /^(\d+|)$/.test(str);
 
 const hasNoFlippers = (str) => { };
 
