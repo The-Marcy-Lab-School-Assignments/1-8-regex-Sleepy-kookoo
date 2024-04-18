@@ -3,7 +3,7 @@ const helloWorldRegex = (str) => /(hello world)/gi.test(str)
 
 const hasAVowel = (str) => /[aeiou]/i.test(str);
 
-const hasCatsOrDogs = (str) => { };
+const hasCatsOrDogs = (str) => /(cats|dogs)/i.test(str);
 
 const hasVowelStart = (str) => { };
 
