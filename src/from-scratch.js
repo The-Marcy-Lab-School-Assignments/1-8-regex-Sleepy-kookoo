@@ -11,7 +11,7 @@ const hasPunctuationEnd = (str) => /[.?!]$/.test(str);
 
 const hasNothingOrDigits = (str) => /^(\d+|)$/.test(str);
 
-const hasNoFlippers = (str) => { };
+const hasNoFlippers = (str) => !/[BCcDEHIKOoXxl]/g.test(str);;
 
 const isValidEmail = (str) => { };
 
