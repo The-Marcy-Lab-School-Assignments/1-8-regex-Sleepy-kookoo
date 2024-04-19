@@ -13,13 +13,30 @@ const hasNothingOrDigits = (str) => /^(\d+|)$/.test(str);
 
 const hasNoFlippers = (str) => !/[BCcDEHIKOoXxl]/g.test(str);;
 
-const isValidEmail = (str) => { };
+const isValidEmail = (str) => {
+  const pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  return pattern.test(str);
+};
 
-const isValidPhoneNumber = (str) => { };
+const isValidPhoneNumber = (str) => {
+  const pattern = /^$/;
+  return pattern.test(str);
+};
 
-const matchAllNumbers = (str) => { };
 
-const matchAllNumbersAsNumbers = (str) => { };
+const matchAllNumbers = (str) => {
+  const numberMatch = /\d+/g
+  const matches = str.match(numberMatch)
+  if (matches) {
+    return matches
+  } else {
+    return []
+  }
+};
+
+const matchAllNumbersAsNumbers = (str) => {
+
+};
 
 const matchAllWords = (str) => { };
 
