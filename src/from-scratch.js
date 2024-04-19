@@ -35,7 +35,13 @@ const matchAllNumbers = (str) => {
 };
 
 const matchAllNumbersAsNumbers = (str) => {
-
+  const numberMatch = /\d+/g
+  const matches = str.match(numberMatch)
+  if (matches) {
+    return matches.map(Number)
+  } else {
+    return []
+  }
 };
 
 const matchAllWords = (str) => { };
