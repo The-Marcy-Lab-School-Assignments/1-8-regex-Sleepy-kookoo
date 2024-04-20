@@ -11,7 +11,7 @@ const hasPunctuationEnd = (str) => /[.?!]$/.test(str);
 
 const hasNothingOrDigits = (str) => /^(\d+|)$/.test(str);
 
-const hasNoFlippers = (str) => !/[BCcDEHIKOoXxl]/g.test(str);;
+const hasNoFlippers = (str) => !/[BCcDEHIKOoXxl]/g.test(str);
 
 const isValidEmail = (str) => {
   const pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
@@ -19,8 +19,7 @@ const isValidEmail = (str) => {
 };
 
 const isValidPhoneNumber = (str) => {
-  const pattern = /^$/;
-  return pattern.test(str);
+  return /^[+]?[(]?[0-9]{3}[)]?[-\s.]+[0-9]{3}[-\s.]+[0-9]{4}$/.test(str);
 };
 
 
@@ -44,15 +43,31 @@ const matchAllNumbersAsNumbers = (str) => {
   }
 };
 
-const matchAllWords = (str) => { };
+const matchAllWords = (str) => {
+  const wordMatch = /[a-zA-Z']+/g
+  const word = str.match(wordMatch)
+  if (word) {
+    return word;
+  } else {
+    return [];
+  }
+};
 
-const replaceAllNumbers = (str) => { };
+const replaceAllNumbers = (str) => {
+  return str.replace((/\d+/g), '???')
+};
 
-const fixFileName = (str) => { };
+const fixFileName = (str) => {
+  return str.replaceAll(/\s+/g, '_')
+};
 
-const nameRedacter = (str) => { };
+const nameRedacter = (str) => {
+  return str.replace(/[A-Z]{2,}/g, "REDACTED")
+};
 
-const camelToSnakeCase = (str) => { };
+const camelToSnakeCase = (str) => {
+  return str.replace(/[A-Z]/g, '_$&').toLowerCase();
+};
 
 module.exports = {
   helloWorldRegex,
