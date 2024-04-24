@@ -1,3 +1,4 @@
+/** FEEDBACK: Great job passing all test cases! */
 const helloWorldRegex = (str) => /(hello world)/gi.test(str)
 
 
@@ -56,7 +57,7 @@ const matchAllWords = (str) => {
 const replaceAllNumbers = (str) => {
   return str.replace((/\d+/g), '???')
 };
-
+/** FEEDBACK: Because you are using the global flag here, you do not need to use replaceAll! */
 const fixFileName = (str) => {
   return str.replaceAll(/\s+/g, '_')
 };
